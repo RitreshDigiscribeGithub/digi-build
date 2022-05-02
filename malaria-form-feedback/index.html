@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>malaria form feedback</title>
+</head>
+<style>
+    .inputs-width {
+        width: 80px;
+    }
+</style>
+
+<body>
+    <div class="p-2">
+        <h1>Malaria form feedback</h1>
+        <form onsubmit="onSubmitHandler(event)">
+            <fieldset>
+                <div class="table-responsive">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Fever</th>
+                                <th scope="col">Appetite</th>
+                                <th scope="col">Activity</th>
+                                <th scope="col">Rashes</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="dy_table">
+                            <script>
+                                let formDataArr = [
+                                    {
+                                        tableDate: {
+                                            date: new Date("2015-03-25")
+                                        },
+                                        fever: {
+                                            t1: 1,
+                                            t2: 2,
+                                            t3: 3,
+                                            t4: 4
+                                        },
+                                        appetite: {
+                                            breakfast: 1,
+                                            lunch: 2,
+                                            dinner: 3
+                                        },
+                                        activity: 'a',
+                                        Rashes: 'b',
+                                    },
+                                ];
+                                formDataArr.forEach((ele, i) => {
+                                    document.getElementById('dy_table').innerHTML += `
+             <tr>
+               <th scope="row" class="input-group-sm">
+                  <input type="date" name="datepicker_${i + 1}" class="form-control" value="${ele.tableDate.date}" style="width: 200px;">
+               </th>
+                <th>
+                  <div class="input-group-sm" style="display: flex;">
+                    <input type="text" name="fever_time_1_Row_${i + 1}"
+                    value="${ele.fever.t1}"
+                    class="form-control inputs-width mx-1">
+                    <input type="text" name="fever_time_2_Row_${i + 1}" value="${ele.fever.t2}" 
+                    class="form-control inputs-width mx-1" >
+                    <input type="text" name="fever_time_3_Row_${i + 1}" value="${ele.fever.t3}" 
+                    class="form-control inputs-width mx-1">
+                    <input type="text" name="fever_time_4_Row_${i + 1}" value="${ele.fever.t4}" 
+                    class="form-control inputs-width mx-1">
+                 </div>
+               </th>
+               <th>
+                 <div style="display: flex;" class="input-group-sm">
+                    <input type="text" name="appetite_1_Row_${i + 1}" value="${ele.appetite.breakfast}" 
+                    class="form-control inputs-width mx-1">
+                    <input type="text" name="appetite_2_Row_${i + 1}"  value="${ele.appetite.dinner}" 
+                    class="form-control inputs-width mx-1">
+                    <input type="text" name="appetite_3_Row_${i + 1}"  value="${ele.appetite.lunch}" 
+                    class="form-control inputs-width mx-1">
+                 </div>
+              </th>
+               <th class="input-group-sm">
+                   <input type="text" name="activity_${i + 1}" 
+                   value="${ele.activity}"  class="form-control">
+               </th>
+               <th class="input-group-sm">
+                  <input type="text" name="rashes_${i + 1}" 
+                  value="${ele.Rashes}" class="form-control">
+               </th>
+         </tr>` });
+
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+            <!-- form-check -->
+            <div class="container-fluid">
+                <div class="my-3">
+                    <div class="form-check pb-2">
+                        <input class="form-check-input" type="checkbox" name="fsCheck" id="more_than_102"
+                            value="more_than_102">
+                        <label class="form-check-label" for="more_than_102">
+                            Temperature was more than 102 for more then 48 hrs
+                        </label>
+                    </div>
+                    <div class="form-check pb-2">
+                        <input class="form-check-input" type="checkbox" name="fsCheck" id="appetite_decreasing"
+                            value="appetite_decreasing">
+                        <label class="form-check-label" for="appetite_decreasing">
+                            Appetite Decreasing
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="fsCheck" value="activity_increasing"
+                            id="activity_increasing">
+                        <label class="form-check-label" for="activity_increasing">
+                            Activity Increasing
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- lab test done -->
+            <div class="container-fluid">
+                <span class="fs-5 pb-2 d-block">Lab Test Done</span>
+                <div class="row mb-3" id="lab_test">
+                    <script>
+                        let testList = [
+                            { id: 'CBC', name: 'CBC' },
+                            { id: 'MP', name: 'MP' },
+                            { id: 'blood_culture', name: 'Blood Culture' },
+                            { id: 'SGOT', name: 'SGOT' },
+                            { id: 'SGPT', name: 'SGPT' },
+                            { id: 'Urine_Routine', name: 'Urine Routine' },
+                            { id: 'x_ray_chest', name: 'X-Ray Chest' },
+                            { id: 'dengue_nS1', name: 'Dengue NS1' },
+                            { id: 'type_dot_igM', name: 'Type Dot igM' },
+                            { id: 'Malaria_Anti_gen', name: 'Malaria Anti-gen' },
+                        ];
+
+                        testList.forEach((element, i) => {
+                            document.getElementById('lab_test').innerHTML += `
+                        <div class="col-6 col-md-4">
+                            <div class="form-check pb-2">
+                                <input class="form-check-input" type="checkbox" name="lab_test" id="lab_test_${i + 1}" value="${element.id}">
+                                  <label class="form-check-label" 
+                                      for="lab_test_${i + 1}">${element.name}
+                                 </label>
+                            </div >
+                        </div >`;
+                        })
+                    </script>
+                </div>
+            </div>
+            <!-- lab test done -->
+            <div class=" text-end">
+                <button class="btn btn-dark" type="submit">submit now</button>
+            </div>
+        </form>
+    </div>
+</body>
+<!-- script js-->
+<script>
+    let fs = {
+        table: [],
+        check: [],
+        lab_test: [],
+    }
+
+    function getCheckboxList() {
+        if (document.querySelectorAll('input[name="lab_test"]')) {
+            const values = Array
+                .from(document.querySelectorAll('input[name="lab_test"]'))
+                .filter((checkbox) => checkbox.checked)
+                .map((checkbox) => fs.lab_test.push(checkbox.value));
+            console.log(fs);
+        }
+    }
+    function onSubmitHandler(e) {
+        e.preventDefault()
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+        // appetite_decreasing
+        const { appetite_decreasing, activity_increasing, more_than_102 } = formProps;
+        console.log(formProps);
+        // fs.table = [...fs.table, { ddL: '' }]
+        alert(JSON.stringify(formProps))
+        getCheckboxList()
+    }
+</script>
+<!-- script js-->
+
+</html>

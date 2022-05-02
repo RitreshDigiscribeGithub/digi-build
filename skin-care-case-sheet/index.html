@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skin care case sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <!-- form -->
+    <form onsubmit="onSubmitHandler(event)">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-6">
+                    <!-- Todo: Medical History -->
+                    <div class="card p-3 my-2" title="Medical History">
+                        <span class="fs-5 pb-3">Medical History</span>
+                        <div class="row pb-3">
+                            <div class="col-12 col-md-4">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <span>Patient</span>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <span>Family</span>
+                            </div>
+                        </div>
+                        <!-- recurrent cold -->
+                        <div id="medicalHistory">
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        recurrent cold/cough /Fever
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_recurrent"
+                                        name="p_recurrent">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_recurrent"
+                                        name="f_recurrent">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        headaches / sinu
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_headaches_and_sinus"
+                                        name="p_headaches_and_sinus">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_headaches_and_sinus"
+                                        name="f_headaches_and_sinus">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        joint pains
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_joint_pains"
+                                        name="p_joint_pains">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_joint_pains"
+                                        name="f_joint_pains">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        blood pressure
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_blood_pressure"
+                                        name="p_blood_pressure">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_blood_pressure"
+                                        name="f_blood_pressure">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        cholesterol
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_cholesterol"
+                                        name="p_cholesterol">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_cholesterol"
+                                        name="f_cholesterol">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        diabetes
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_diabetes" name="p_diabetes">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_diabetes" name="f_diabetes">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        asthma
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_asthma" name="p_asthma">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_asthma" name="f_asthma">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        bladder C/o
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_bladder" name="p_bladder">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_bladder" name="f_bladder">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        bowel C/o
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_bowel" name="p_bowel">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_bowel" name="f_bowel">
+                                </div>
+                            </div>
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-4 py-1">
+                                    <label for="inputPassword">
+                                        misc
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="p_misc" name="p_misc">
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <input type="text" class="form-control medicalLi" id="f_misc" name="f_misc">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- current -->
+                    </div>
+                    <!-- Todo: Presonal History -->
+                    <div class="card p-3 mb-2" id="presonalHistory" title="Presonal History">
+                        <span class="fs-5 pb-3">Presonal History</span>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    sleep habit
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="sleep_habit" name="sleep_habit">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    stress
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="stress" name="stress">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    exercise
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="exercise" name="exercise">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    weight gain
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="weight_gain" name="weight_gain">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    addictions
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="addictions" name="addictions">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Todo: Menstrual History -->
+                    <div class="card p-3 mb-2" id="MenstrualHistory" title="Menstrual History">
+                        <span class="fs-5 pb-3">Menstrual History</span>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    cycle
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="cycle" name="cycle">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    LMP
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="LMP" name="LMP">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    PMS
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="PMS" name="PMS">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    H/o OC
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="OC" name="OC">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    H/o PCOD
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="PCOD" name="PCOD">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Todo: OBS History -->
+                    <div class="card p-3 mb-2" id="OBSHistory" title="OBS History">
+                        <span class="fs-5 pb-3">OBS History</span>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    no of pregnancies / FT/LCS
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="pregnancies" name="pregnancies">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    Children / Age
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="children_age" name="children_age">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-4 py-1">
+                                <label for="inputPassword">
+                                    H/o inferility Rx Taken
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <textarea class="form-control" id="rx_taken" rows="3" name="rx_taken"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-6">
+                    <div class="card p-3 my-2" id="productUsed" title="Product Used">
+                        <span class="fs-5 pb-3">Product Used</span>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label for="inputPassword" class="mb-2">
+                                    face
+                                </label>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="mb-2">
+                                    face wash /soap
+                                </label>
+                                <input type="text" class="form-control" id="face_wash_soap" name="face_wash_soap">
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <label class="mb-2">
+                                    sun screen
+                                </label>
+                                <input type="text" class="form-control" id="face_sun_screen" name="face_sun_screen">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="mb-2">
+                                    moisturiser
+                                </label>
+                                <input type="text" class="form-control" id="face_moisturiser" name="face_moisturiser">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label for="inputPassword" class="mb-2">
+                                    body
+                                </label>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="mb-2">
+                                    face wash /soap
+                                </label class="mb-2">
+                                <input type="text" class="form-control" id="body_wash_soap" name="body_wash_soap">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="mb-2">
+                                    sun screen
+                                </label>
+                                <input type="text" class="form-control" id="body_sun_screen" name="body_sun_screen">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="mb-2">
+                                    moisturiser
+                                </label>
+                                <input type="text" class="form-control" id="body_moisturiser" name="body_moisturiser">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label class="mb-2" for="inputPassword">
+                                    scalp
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="mb-2">
+                                    shampoo / conditioner
+                                </label>
+                                <input type="text" placeholder="Type Brand Name" class="form-control mb-2"
+                                    id="scalp_conditioner_brand" name="scalp_conditioner_brand">
+                                <input type="text" placeholder="Select Frequency" class="form-control"
+                                    id="scalp_conditioner_freq" name="scalp_conditioner_freq">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="mb-2">
+                                    oil
+                                </label>
+                                <input type="text" placeholder="Type Brand Name" class="form-control mb-2"
+                                    id="scalp_oil_brand" name="scalp_oil_brand">
+                                <input type="text" placeholder="Select Frequency" class="form-control"
+                                    id="scalp_oil_freq" name="scalp_oil_freq">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="mb-2">
+                                    hair color
+                                </label>
+                                <input type="text" placeholder="Type Brand Name" class="form-control mb-2"
+                                    id="scalp_hair_color_brand" name="scalp_hair_color_brand">
+                                <input type="text" placeholder="Select Frequency" class="form-control"
+                                    id="scalp_hair_color_freq" name="scalp_hair_color_freq">
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label class="mb-2">
+                                    Any Procedures
+                                </label>
+                                <textarea class="form-control" name="any_procedures" id="any_procedures"
+                                    rows="3"></textarea>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label class="mb-2" for="inputPassword">
+                                    drug allergy
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" class="form-control" id="drug_allergy" name="drug_allergy">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label class="mb-2" for="inputPassword">
+                                    treatment
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <label class="mb-2" for="inputPassword">
+                                    medical
+                                </label>
+                                <textarea class="form-control" id="treatment_1" rows="3" name="treatment_1"></textarea>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label class="mb-2" for="inputPassword">
+                                    treatment
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <label class="mb-2" for="inputPassword">
+                                    medical
+                                </label>
+                                <textarea class="form-control" id="treatment_2" rows="3" name="treatment_2"></textarea>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-2">
+                            <div class="col-12 col-md-3 py-1">
+                                <label class="mb-2" for="inputPassword">
+                                    misc
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <label class="mb-2" for="inputPassword">
+                                    patient profile / Additional complaints from patients
+                                </label>
+                                <textarea class="form-control" name="patients_complaints" id="patients_complaints"
+                                    rows="5"></textarea>
+                            </div>
+                            <div class="col-12 text-end pt-3">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <!-- form -->
+</body>
+
+<script src="//unpkg.com/alpinejs" defer></script>
+<script>
+    $(function () {
+        var autocompleteList = {
+            medicalHistory: [
+                'yes', 'no', 'type your answer'
+            ],
+            productUser: {
+                scalp: ['daily', 'daily before sleeping', 'once in week', 'custom']
+            }
+        };
+
+        $("#scalp_ferq_1").autocomplete({
+            source: autocompleteList.productUser.scalp
+        });
+
+        $("#scalp_ferq_2").autocomplete({
+            source: autocompleteList.productUser.scalp
+        });
+
+        $(".medicalLi").autocomplete({
+            source: autocompleteList.medicalHistory
+        });
+    });
+</script>
+<script>
+    function onSubmitHandler(e) {
+        e.preventDefault()
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+        const {
+            p_recurrent, f_recurrent, p_misc, f_misc, p_joint_pains, f_joint_pains, p_headaches_and_sinus, f_headaches_and_sinus, p_asthma, f_asthma, p_bladder, f_bladder, p_blood_pressure, f_blood_pressure, p_bowel, f_bowel, p_cholesterol, f_cholesterol, p_diabetes, f_diabetes,
+            // Presonal History
+            sleep_habit, stress, exercise, weight_gain, addictions,
+            // Menstrual History
+            cycle, LMP, PMS, OC, PCOD,
+            // OBS History
+            pregnancies, children_age, rx_taken,
+            // Product Used
+            face_wash_soap, face_sun_screen, face_moisturiser, body_wash_soap, body_sun_screen, body_moisturiser, scalp_conditioner_brand, scalp_conditioner_freq, scalp_oil_brand, scalp_oil_freq, scalp_hair_color_brand, scalp_hair_color_freq, any_procedures, drug_allergy, treatment_1, treatment_2, patients_complaints
+        } = formProps;
+
+        let formObj = {
+            medicalHistory: {
+                recurrent: {
+                    patient: p_recurrent, Family: f_recurrent
+                },
+                misc: {
+                    patient: p_misc, Family: f_misc
+                },
+                joint_pains: {
+                    patient: p_joint_pains, Family: f_joint_pains
+                },
+                headaches_and_sinus: {
+                    patient: p_headaches_and_sinus, Family: f_headaches_and_sinus
+                },
+                asthma: {
+                    patient: p_asthma, Family: f_asthma
+                },
+                bladder: {
+                    patient: p_bladder, Family: f_bladder
+                },
+                blood_pressure: {
+                    patient: p_blood_pressure, Family: f_blood_pressure
+                },
+                bowel: {
+                    patient: p_bowel, Family: f_bowel
+                },
+                cholesterol: {
+                    patient: p_cholesterol, Family: f_cholesterol
+                },
+                diabetes: {
+                    patient: p_diabetes, Family: f_diabetes
+                },
+            },
+            presonalHistory: {
+                sleep_habit,
+                stress,
+                exercise,
+                weight_gain,
+                addictions
+            },
+            menstrualHistory: { cycle, LMP, PMS, OC, PCOD },
+            oBSHistory: { pregnancies, children_age, rx_taken },
+
+            productUsed: {
+                face: {
+                    face_wash_soap,
+                    face_sun_screen,
+                    face_moisturiser
+                },
+                body: {
+                    body_wash_soap,
+                    body_sun_screen,
+                    body_moisturiser,
+                },
+                scalp: {
+                    conditioner: {
+                        brand: scalp_conditioner_brand,
+                        freq: scalp_conditioner_freq,
+                    },
+                    oil: {
+                        brand: scalp_oil_brand,
+                        freq: scalp_oil_freq,
+                    },
+                    hair_color: {
+                        brand: scalp_hair_color_brand,
+                        freq: scalp_hair_color_freq,
+                    },
+                    any_procedures: any_procedures
+                },
+                drug_allergy: drug_allergy,
+                treatment_1: { medical: treatment_1 },
+                treatment_2: { medical: treatment_2 },
+                misc: { patients_complaints },
+            }
+        }
+        console.log(formObj);
+    }
+</script>
+
+</html>

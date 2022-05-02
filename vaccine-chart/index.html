@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vaccine-chart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <form onsubmit="onSubmitHandler(event)">
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">At Birth</th>
+                            <th scope="col">Vaccine Brand</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Date Administered</th>
+                            <th scope="col">Next Appointment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vaccine_table">
+                        <script>
+                            const d = document.getElementById('vaccine_table');
+                            const vaccine_table_list = [
+                                {
+                                    duration: '2 Month', list: [
+                                        {
+                                            name: 'Hep B',
+                                            dose: '2nd dose',
+                                            vaccine_brand: 'hep_b_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: '',
+                                        },
+                                        {
+                                            name: 'RV',
+                                            dose: '1st dose',
+                                            vaccine_brand: 'rv_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'DTaP',
+                                            dose: '1st dose',
+                                            vaccine_brand: 'DTaP_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Hib',
+                                            dose: '1st dose',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'PCV13',
+                                            dose: '1st dose',
+                                            vaccine_brand: 'PCV13_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'IPV',
+                                            dose: '1st dose',
+                                            vaccine_brand: 'DTaP_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                    ]
+                                },
+                                {
+                                    duration: '4 Month', list: [
+                                        {
+                                            name: 'RV',
+                                            dose: '2nd dose',
+                                            vaccine_brand: 'rv_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'DTaP',
+                                            dose: '2nd dose',
+                                            vaccine_brand: 'DTaP_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Hib',
+                                            dose: '2nd dose',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'PCV13',
+                                            dose: '2nd dose',
+                                            vaccine_brand: 'PCV13_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'IPV',
+                                            dose: '2nd dose',
+                                            vaccine_brand: 'DTaP_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                    ]
+                                },
+                                {
+                                    duration: '6 Month', list: [
+                                        {
+                                            name: 'Hep B',
+                                            dose: '3rd dose',
+                                            vaccine_brand: 'rv_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'DTaP',
+                                            dose: '3rd dose',
+                                            vaccine_brand: 'rv_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Hib',
+                                            dose: '3rd dose',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'PCV13',
+                                            dose: '3rd dose',
+                                            vaccine_brand: 'PCV13_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'IPV',
+                                            dose: '3rd dose',
+                                            vaccine_brand: 'DTaP_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Flu',
+                                            dose: 'yearly',
+                                            vaccine_brand: 'DTaP_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                    ]
+                                },
+                                {
+                                    duration: '12 Month', list: [
+                                        {
+                                            name: 'Hib',
+                                            dose: 'Booster',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'PCV13',
+                                            dose: '4th dose',
+                                            vaccine_brand: 'PCV13_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'MMR',
+                                            dose: '1st dose',
+                                            vaccine_brand: 'PCV13_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Varicella',
+                                            dose: '1 dose',
+                                            vaccine_brand: 'rv_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Hap A',
+                                            dose: '2 dose series',
+                                            vaccine_brand: 'rv_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        }
+                                    ]
+                                },
+                                {
+                                    duration: '15 Month', list: [
+                                        {
+                                            name: 'DTaP',
+                                            dose: '4th Dose',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                    ]
+                                },
+                                {
+                                    duration: '4-6 years', list: [
+                                        {
+                                            name: 'DTaP',
+                                            dose: 'Booster',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'IPV',
+                                            dose: 'Booster',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'MMR',
+                                            dose: '2nd Dose',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                        {
+                                            name: 'Varicella',
+                                            dose: '2 Dose',
+                                            vaccine_brand: 'Hib_vaccine_brand',
+                                            type: '',
+                                            date_administered: '',
+                                            next_appointment: ''
+                                        },
+                                    ]
+                                },
+                            ];
+                            const idStr = (str, ...rest) => {
+                                let str_param = `${str.replace(' ', '_')}_${rest}`
+                                return str_param.replace(' ', '_').replace('-', '_').toLowerCase()
+                            }
+                            // outer table
+                            vaccine_table_list.forEach((ele, i) => {
+                                let tr = d.appendChild(document.createElement('tr'))
+                                tr.innerHTML = `<th scope="row">
+                                                  ${ele.duration}
+                                               </th>`;
+                                // inner table
+                                ele.list.forEach((list, i) => {
+                                    let trc = d.appendChild(document.createElement('tr'))
+                                    trc.innerHTML = `<tr>
+                            <td scope="row">
+                                <div class="row" style="width: 240px;">
+                                    <div class="col-6">
+                                        ${list.name}
+                                    </div>
+                                    <div class="col-6">
+                                        ${list.dose}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="input-group-sm">
+                                <div style="width: 150px;">
+                                    <input type="text" class="form-control" 
+                                id="${idStr(ele.duration, list.name + '_vaccine_brand')}" 
+                                name="${idStr(ele.duration, list.name + '_vaccine_brand')}" value="">
+                                </div>
+                            </td>
+                            <td class="input-group-sm">
+                                <div style="width: 150px;">
+                                <input type="text" 
+                                    class="form-control list_type"
+                                id="${idStr(ele.duration, list.name + '_type')}" 
+                                name="${idStr(ele.duration, list.name + '_type')}"
+                                value="">
+                                </div>
+                            </td>
+                            <td class="input-group-sm">
+                                <div style="width: 150px;">
+                                    <input type="text" class="form-control"
+                                id="${idStr(ele.duration, list.name + '_date_admin')}" 
+                                name="${idStr(ele.duration, list.name + '_date_admin')}" value="">
+                               </div>
+                            </td>
+                            <td class="input-group-sm">
+                                <div style="width: 150px;">
+                                  <input type="text" class="form-control" 
+                                id="${idStr(ele.duration, list.name + '_next_appointment')}"
+                                name="${idStr(ele.duration, list.name + '_next_appointment')}" value=""> 
+                                </div>
+                            </td>
+                        </tr>`
+                                })
+
+                            })
+                        </script>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="my-3">
+                <button type="submit" class="btn btn-dark">submit</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+<script>
+    $(function () {
+        $(".list_type").autocomplete({
+            source: ['combination', 'single']
+        });
+    });
+    function onSubmitHandler(e) {
+        e.preventDefault()
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+        console.log(formProps);
+    }
+</script>
+
+</html>
